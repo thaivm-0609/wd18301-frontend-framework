@@ -2,3 +2,8 @@
     color: red;
     font-size: large;
 }
+
+.carousel-caption {
+    color: red !important;
+    font-size: larger;
+}

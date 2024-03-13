@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="angular-1.8.2/angular.min.js"></script>
+</head>
+<!-- ng-app: khai báo tên application -->
+<body ng-app="wd18301">
+    <!-- ng-controller: khai báo tên controller -->
+    <form action="" class="container" ng-controller="myController">
+        <div>
+            <label for="" class="form-label">Name</label>
+            <input type="text" class="form-control" ng-model="name">
+            <h1>Hello {{ name }}</h1>
+            <!-- mảng
+            <h1>Hello {{ listUser[0] }}</h1>
+            <h1>Hello {{ listUser[1] }}</h1>
+            <h1>Hello {{ listUser[2] }}</h1> -->
+            <!-- Object -->
+            <h1>Hello {{ teacher.name }}</h1>
+            <h1>Hello {{ teacher['email'] }}</h1>
+        </div>
+    </form>
+    <script>
+        //khởi tạo module angular
+        var app = angular.module('wd18301', []);
+        //khai báo controller: 2 tham số: 
+        // 1 là 'tên controller'
+        // 2 là hàm xử lý
+        
+        // // C1: viết trực tiếp hàm
+        
+        //mảng
+        // app.controller('myController', function ($scope) {
+        //     $scope.listUser = ['thaivm2','thaivm3','thaivm4'];
+        // });
+        app.controller('myController', function ($scope) {
+            $scope.teacher = {
+                name: 'thaivm2',
+                email: 'thaivm2@fe.edu.vn',
+                gender: 'male',
+            };
+        });
+        //rút gọn
+        // angular.module('wd18301', []).controller('myController', function ($scope) {
+        //     $scope.name = 'wd18301';
+        // })
+        // C2: gọi tên hàm khai báo sẵn
+        // function tenFunction($scope) {
+        //     $scope.name = 'wd18301';
+        // }
+        // app.controller('myController', tenFunction);
+    </script>
+</body>
+</html>
